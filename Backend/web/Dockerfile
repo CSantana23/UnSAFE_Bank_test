@@ -13,7 +13,7 @@ RUN yarn build -s
 
 # set up production environment
 # the base image for this is an alpine based nginx image
-FROM nginx:alpine
+FROM nginx:1.25.3-alpine3.18
 # copy the build folder from react to the root of nginx (www)
 COPY --from=build /app/build /usr/share/nginx/html
 # --------- only for those using react router ----------
